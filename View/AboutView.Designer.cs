@@ -121,7 +121,7 @@ namespace A2G_Trainer_XP.View
             this.VersionLabel.Name = "VersionLabel";
             this.VersionLabel.Size = new System.Drawing.Size(66, 13);
             this.VersionLabel.TabIndex = 1;
-            this.VersionLabel.Text = "v0.4.0 alpha";
+            this.VersionLabel.Text = "v0.5.0 alpha";
             // 
             // AboutTitleLabel
             // 

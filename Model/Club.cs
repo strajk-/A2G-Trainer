@@ -143,6 +143,12 @@ namespace A2G_Trainer_XP.Model
         #endregion
 
         #region Finance
+        public int Wealth{ get => this.wealth; set { this.wealth = value; this.OnPropertyChanged(nameof(this.Wealth)); } }
+        private int wealth = 0;
+        public int SponsorCash { get => this.sponsorCash; set { this.sponsorCash = value; this.OnPropertyChanged(nameof(this.SponsorCash)); } }
+        private int sponsorCash = 0;
+        public byte SponsorPeriod { get => this.sponsorPeriod; set { this.sponsorPeriod = value; this.OnPropertyChanged(nameof(this.SponsorPeriod)); } }
+        private byte sponsorPeriod = 0;
         public int EarningsAds { get => this.earningsAds; set { this.earningsAds = value; this.OnPropertyChanged(nameof(this.EarningsAds)); } }
         private int earningsAds = 0;
         public int EarningsFriendlyGames { get => this.earningsFriendlyGames; set { this.earningsFriendlyGames = value; this.OnPropertyChanged(nameof(this.EarningsFriendlyGames)); } }
@@ -175,6 +181,20 @@ namespace A2G_Trainer_XP.Model
         public byte TraineeCCount { get => this.traineeCCount; set { this.traineeCCount = value; this.OnPropertyChanged(nameof(this.TraineeCCount)); } }
         private byte traineeCCount;
         #endregion
+
+        public ushort FreeTickets { get => this.freeTickets; set { this.freeTickets = value; this.OnPropertyChanged(nameof(this.FreeTickets)); } }
+        private ushort freeTickets;
+        public ushort RoadGameSupport { get => this.roadGameSupport; set { this.roadGameSupport = value; this.OnPropertyChanged(nameof(this.RoadGameSupport)); } }
+        private ushort roadGameSupport;
+
+        public byte Respect { get => this.respect; set { this.respect = value; this.OnPropertyChanged(nameof(this.Respect)); } }
+        private byte respect;
+        public byte Spirit { get => this.spirit; set { this.spirit = value; this.OnPropertyChanged(nameof(this.Spirit)); } }
+        private byte spirit;
+        public byte Will2Win { get => this.will2Win; set { this.will2Win = value; this.OnPropertyChanged(nameof(this.Will2Win)); } }
+        private byte will2Win;
+        public byte TeamCohesion { get => this.teamCohesion; set { this.teamCohesion = value; this.OnPropertyChanged(nameof(this.TeamCohesion)); } }
+        private byte teamCohesion;
 
         public String SquadAddress { get => this.squadAddress; set { this.squadAddress = value; this.OnPropertyChanged(nameof(this.SquadAddress)); } }
 

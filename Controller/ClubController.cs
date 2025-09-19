@@ -128,9 +128,20 @@ namespace A2G_Trainer_XP.Controller
 
                 if (type == PlayerEnums.AddressType.OWN)
                 {
+                    club.Wealth = BitConverter.ToInt32(this.memory.ReadBytes(GetAddress(this.memory, club, club.Addresses[ClubEnums.AddressKey.Wealth]), 4), 0);
                     club.EarningsLeagueGames = BitConverter.ToInt32(this.memory.ReadBytes(GetAddress(this.memory, club, club.Addresses[ClubEnums.AddressKey.EarningsLeagueGames]), 4), 0);
                     club.EarningsFriendlyGames = BitConverter.ToInt32(this.memory.ReadBytes(GetAddress(this.memory, club, club.Addresses[ClubEnums.AddressKey.EarningsFriendlyGames]), 4), 0);
                     club.EarningsAds = BitConverter.ToInt32(this.memory.ReadBytes(GetAddress(this.memory, club, club.Addresses[ClubEnums.AddressKey.EarningsAds]), 4), 0);
+                    club.SponsorCash = BitConverter.ToInt32(this.memory.ReadBytes(GetAddress(this.memory, club, club.Addresses[ClubEnums.AddressKey.SponsorCash]), 4), 0);
+                    club.SponsorPeriod = (byte) this.memory.ReadByte(GetAddress(this.memory, club, club.Addresses[ClubEnums.AddressKey.SponsorPeriod]));
+
+                    club.Respect = (byte)this.memory.ReadByte(GetAddress(this.memory, club, club.Addresses[ClubEnums.AddressKey.Respect]));
+                    club.Spirit = (byte)this.memory.ReadByte(GetAddress(this.memory, club, club.Addresses[ClubEnums.AddressKey.Spirit]));
+                    club.Will2Win = (byte)this.memory.ReadByte(GetAddress(this.memory, club, club.Addresses[ClubEnums.AddressKey.Will2Win]));
+                    club.TeamCohesion = (byte)this.memory.ReadByte(GetAddress(this.memory, club, club.Addresses[ClubEnums.AddressKey.TeamCohesion]));
+
+                    club.FreeTickets = BitConverter.ToUInt16(this.memory.ReadBytes(GetAddress(this.memory, club, club.Addresses[ClubEnums.AddressKey.FreeTickets]), 2), 0);
+                    club.RoadGameSupport = BitConverter.ToUInt16(this.memory.ReadBytes(GetAddress(this.memory, club, club.Addresses[ClubEnums.AddressKey.RoadGameSupport]), 2), 0);
 
                     club.StadiumName = this.memory.ReadString(GetAddress(this.memory, club, club.Addresses[ClubEnums.AddressKey.StadiumName]), length: 28, stringEncoding: Encoding.GetEncoding("iso-8859-1"));
 
@@ -190,10 +201,20 @@ namespace A2G_Trainer_XP.Controller
             this.memory.WriteMemory(GetAddress(this.memory, this.Club, "0"), "string", this.Club.ClubName.PadRight(19, '\0'), stringEncoding: Encoding.GetEncoding("iso-8859-1"));
             this.memory.WriteMemory(GetAddress(this.memory, this.Club, "81C"), "string", this.Club.StadiumName.PadRight(28, '\0'), stringEncoding: Encoding.GetEncoding("iso-8859-1"));
 
-            this.memory.WriteBytes(GetAddress(this.memory, this.Club, "290"), BitConverter.GetBytes((int)this.Club.EarningsLeagueGames));
-            this.memory.WriteBytes(GetAddress(this.memory, this.Club, "2B8"), BitConverter.GetBytes((int)this.Club.EarningsFriendlyGames));
-            this.memory.WriteBytes(GetAddress(this.memory, this.Club, "470"), BitConverter.GetBytes((int)this.Club.EarningsAds));
+            this.memory.WriteBytes(GetAddress(this.memory, this.Club, club.Addresses[ClubEnums.AddressKey.Wealth]), BitConverter.GetBytes(this.Club.Wealth));
+            this.memory.WriteBytes(GetAddress(this.memory, this.Club, "290"), BitConverter.GetBytes(this.Club.EarningsLeagueGames));
+            this.memory.WriteBytes(GetAddress(this.memory, this.Club, "2B8"), BitConverter.GetBytes(this.Club.EarningsFriendlyGames));
+            this.memory.WriteBytes(GetAddress(this.memory, this.Club, "470"), BitConverter.GetBytes(this.Club.EarningsAds));
+            this.memory.WriteBytes(GetAddress(this.memory, this.Club, club.Addresses[ClubEnums.AddressKey.SponsorCash]), BitConverter.GetBytes(this.Club.SponsorCash));
+            this.memory.WriteBytes(GetAddress(this.memory, this.Club, club.Addresses[ClubEnums.AddressKey.SponsorPeriod]), BitConverter.GetBytes(this.Club.SponsorPeriod));
 
+            this.memory.WriteBytes(GetAddress(this.memory, this.Club, club.Addresses[ClubEnums.AddressKey.Respect]), BitConverter.GetBytes(this.Club.Respect));
+            this.memory.WriteBytes(GetAddress(this.memory, this.Club, club.Addresses[ClubEnums.AddressKey.Spirit]), BitConverter.GetBytes(this.Club.Spirit));
+            this.memory.WriteBytes(GetAddress(this.memory, this.Club, club.Addresses[ClubEnums.AddressKey.Will2Win]), BitConverter.GetBytes(this.Club.Will2Win));
+            this.memory.WriteBytes(GetAddress(this.memory, this.Club, club.Addresses[ClubEnums.AddressKey.TeamCohesion]), BitConverter.GetBytes(this.Club.TeamCohesion));
+
+            this.memory.WriteBytes(GetAddress(this.memory, this.Club, club.Addresses[ClubEnums.AddressKey.FreeTickets]), BitConverter.GetBytes(this.Club.FreeTickets));
+            this.memory.WriteBytes(GetAddress(this.memory, this.Club, club.Addresses[ClubEnums.AddressKey.RoadGameSupport]), BitConverter.GetBytes(this.Club.RoadGameSupport));
 
             this.memory.WriteBytes(GetAddress(this.memory, this.Club, "890"), BitConverter.GetBytes((ushort)this.Club.Roof));
             this.memory.WriteBytes(GetAddress(this.memory, this.Club, "896"), new byte[] { (byte)this.Club.DisplayUnit });

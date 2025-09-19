@@ -3,7 +3,7 @@
 # A2G-Trainer
 
 A trainer for **Anstoss 2 Gold**, tested and compatible with both the original CD release and the GOG version.  
-Built specifically to run even on legacy systems like **Windows XP SP3 x86**, as well as modern systems like **Windows 11 x64**.
+Built specifically to run even on legacy systems. Tested working from **Windows XP SP3 x86** onwards, including all Windows OS versions until **Windows 11 x64**.
 
 ## 📸 Screenshots
 ![Team Choice](docs/TeamChoice.png)  

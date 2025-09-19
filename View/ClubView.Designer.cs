@@ -150,12 +150,32 @@ namespace A2G_Trainer_XP.View
             this.SaveBtn = new System.Windows.Forms.Button();
             this.ReloadBtn = new System.Windows.Forms.Button();
             this.ClubSelect = new System.Windows.Forms.ComboBox();
+            this.WealthInput = new System.Windows.Forms.TextBox();
+            this.label36 = new System.Windows.Forms.Label();
+            this.TeamValuesBox = new System.Windows.Forms.GroupBox();
+            this.label37 = new System.Windows.Forms.Label();
+            this.TeamCohesionInput = new System.Windows.Forms.TextBox();
+            this.label38 = new System.Windows.Forms.Label();
+            this.RespectInput = new System.Windows.Forms.TextBox();
+            this.label39 = new System.Windows.Forms.Label();
+            this.SpiritInput = new System.Windows.Forms.TextBox();
+            this.label40 = new System.Windows.Forms.Label();
+            this.Will2WinInput = new System.Windows.Forms.TextBox();
+            this.label41 = new System.Windows.Forms.Label();
+            this.SponsorInput = new System.Windows.Forms.TextBox();
+            this.label42 = new System.Windows.Forms.Label();
+            this.SponsorPeriod = new System.Windows.Forms.TextBox();
+            this.label43 = new System.Windows.Forms.Label();
+            this.RoadGameSupportInput = new System.Windows.Forms.TextBox();
+            this.label44 = new System.Windows.Forms.Label();
+            this.FreeTicketsInput = new System.Windows.Forms.TextBox();
             this.ClubTabControl.SuspendLayout();
             this.GeneralTab.SuspendLayout();
             this.FinanceBox.SuspendLayout();
             this.ClubGeneralBox.SuspendLayout();
             this.StadiumTab.SuspendLayout();
             this.StadiumBlockBox.SuspendLayout();
+            this.TeamValuesBox.SuspendLayout();
             this.SuspendLayout();
             // 
             // ClubTabControl
@@ -170,6 +190,7 @@ namespace A2G_Trainer_XP.View
             // 
             // GeneralTab
             // 
+            this.GeneralTab.Controls.Add(this.TeamValuesBox);
             this.GeneralTab.Controls.Add(this.FinanceBox);
             this.GeneralTab.Controls.Add(this.ClubGeneralBox);
             this.GeneralTab.Location = new System.Drawing.Point(4, 22);
@@ -182,23 +203,29 @@ namespace A2G_Trainer_XP.View
             // 
             // FinanceBox
             // 
+            this.FinanceBox.Controls.Add(this.label42);
+            this.FinanceBox.Controls.Add(this.SponsorPeriod);
+            this.FinanceBox.Controls.Add(this.label41);
+            this.FinanceBox.Controls.Add(this.SponsorInput);
+            this.FinanceBox.Controls.Add(this.label36);
+            this.FinanceBox.Controls.Add(this.WealthInput);
             this.FinanceBox.Controls.Add(this.LeagueLabel);
             this.FinanceBox.Controls.Add(this.LeagueInput);
             this.FinanceBox.Controls.Add(this.FriendlyLabel);
             this.FinanceBox.Controls.Add(this.FriendlyInput);
             this.FinanceBox.Controls.Add(this.AdsLabel);
             this.FinanceBox.Controls.Add(this.AdsInput);
-            this.FinanceBox.Location = new System.Drawing.Point(6, 239);
+            this.FinanceBox.Location = new System.Drawing.Point(218, 6);
             this.FinanceBox.Name = "FinanceBox";
-            this.FinanceBox.Size = new System.Drawing.Size(206, 102);
+            this.FinanceBox.Size = new System.Drawing.Size(206, 227);
             this.FinanceBox.TabIndex = 6;
             this.FinanceBox.TabStop = false;
-            this.FinanceBox.Text = "Einnahmen";
+            this.FinanceBox.Text = "Finanzen";
             // 
             // LeagueLabel
             // 
             this.LeagueLabel.AutoSize = true;
-            this.LeagueLabel.Location = new System.Drawing.Point(7, 74);
+            this.LeagueLabel.Location = new System.Drawing.Point(8, 107);
             this.LeagueLabel.Name = "LeagueLabel";
             this.LeagueLabel.Size = new System.Drawing.Size(54, 13);
             this.LeagueLabel.TabIndex = 6;
@@ -206,16 +233,16 @@ namespace A2G_Trainer_XP.View
             // 
             // LeagueInput
             // 
-            this.LeagueInput.Location = new System.Drawing.Point(114, 71);
+            this.LeagueInput.Location = new System.Drawing.Point(115, 104);
             this.LeagueInput.Name = "LeagueInput";
-            this.LeagueInput.Size = new System.Drawing.Size(86, 20);
+            this.LeagueInput.Size = new System.Drawing.Size(85, 20);
             this.LeagueInput.TabIndex = 7;
             this.LeagueInput.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // FriendlyLabel
             // 
             this.FriendlyLabel.AutoSize = true;
-            this.FriendlyLabel.Location = new System.Drawing.Point(7, 48);
+            this.FriendlyLabel.Location = new System.Drawing.Point(8, 81);
             this.FriendlyLabel.Name = "FriendlyLabel";
             this.FriendlyLabel.Size = new System.Drawing.Size(101, 13);
             this.FriendlyLabel.TabIndex = 4;
@@ -223,16 +250,16 @@ namespace A2G_Trainer_XP.View
             // 
             // FriendlyInput
             // 
-            this.FriendlyInput.Location = new System.Drawing.Point(114, 45);
+            this.FriendlyInput.Location = new System.Drawing.Point(115, 78);
             this.FriendlyInput.Name = "FriendlyInput";
-            this.FriendlyInput.Size = new System.Drawing.Size(86, 20);
+            this.FriendlyInput.Size = new System.Drawing.Size(85, 20);
             this.FriendlyInput.TabIndex = 5;
             this.FriendlyInput.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // AdsLabel
             // 
             this.AdsLabel.AutoSize = true;
-            this.AdsLabel.Location = new System.Drawing.Point(6, 22);
+            this.AdsLabel.Location = new System.Drawing.Point(7, 55);
             this.AdsLabel.Name = "AdsLabel";
             this.AdsLabel.Size = new System.Drawing.Size(51, 13);
             this.AdsLabel.TabIndex = 2;
@@ -240,7 +267,7 @@ namespace A2G_Trainer_XP.View
             // 
             // AdsInput
             // 
-            this.AdsInput.Location = new System.Drawing.Point(114, 19);
+            this.AdsInput.Location = new System.Drawing.Point(115, 52);
             this.AdsInput.Name = "AdsInput";
             this.AdsInput.Size = new System.Drawing.Size(85, 20);
             this.AdsInput.TabIndex = 3;
@@ -272,7 +299,7 @@ namespace A2G_Trainer_XP.View
             this.FieldCondition.Location = new System.Drawing.Point(9, 196);
             this.FieldCondition.Name = "FieldCondition";
             this.FieldCondition.Size = new System.Drawing.Size(191, 21);
-            this.FieldCondition.TabIndex = 10;
+            this.FieldCondition.TabIndex = 6;
             // 
             // GardeningLabel
             // 
@@ -289,7 +316,7 @@ namespace A2G_Trainer_XP.View
             this.FloodlightCheckbox.Location = new System.Drawing.Point(141, 153);
             this.FloodlightCheckbox.Name = "FloodlightCheckbox";
             this.FloodlightCheckbox.Size = new System.Drawing.Size(62, 17);
-            this.FloodlightCheckbox.TabIndex = 8;
+            this.FloodlightCheckbox.TabIndex = 5;
             this.FloodlightCheckbox.Text = "Flutlicht";
             this.FloodlightCheckbox.UseVisualStyleBackColor = true;
             // 
@@ -299,7 +326,7 @@ namespace A2G_Trainer_XP.View
             this.HeatingCheckBox.Location = new System.Drawing.Point(9, 153);
             this.HeatingCheckBox.Name = "HeatingCheckBox";
             this.HeatingCheckBox.Size = new System.Drawing.Size(94, 17);
-            this.HeatingCheckBox.TabIndex = 7;
+            this.HeatingCheckBox.TabIndex = 4;
             this.HeatingCheckBox.Text = "Rasenheizung";
             this.HeatingCheckBox.UseVisualStyleBackColor = true;
             // 
@@ -310,7 +337,7 @@ namespace A2G_Trainer_XP.View
             this.DisplayUnit.Location = new System.Drawing.Point(9, 122);
             this.DisplayUnit.Name = "DisplayUnit";
             this.DisplayUnit.Size = new System.Drawing.Size(191, 21);
-            this.DisplayUnit.TabIndex = 6;
+            this.DisplayUnit.TabIndex = 3;
             // 
             // DisplayUnitLabel
             // 
@@ -344,7 +371,7 @@ namespace A2G_Trainer_XP.View
             this.StadiumNameInput.Location = new System.Drawing.Point(9, 79);
             this.StadiumNameInput.Name = "StadiumNameInput";
             this.StadiumNameInput.Size = new System.Drawing.Size(191, 20);
-            this.StadiumNameInput.TabIndex = 4;
+            this.StadiumNameInput.TabIndex = 2;
             // 
             // ClubNameInput
             // 
@@ -1351,6 +1378,179 @@ namespace A2G_Trainer_XP.View
             this.ClubSelect.Visible = false;
             this.ClubSelect.SelectedIndexChanged += new System.EventHandler(this.ClubSelect_SelectedIndexChanged);
             // 
+            // WealthInput
+            // 
+            this.WealthInput.Location = new System.Drawing.Point(115, 19);
+            this.WealthInput.Name = "WealthInput";
+            this.WealthInput.Size = new System.Drawing.Size(85, 20);
+            this.WealthInput.TabIndex = 7;
+            this.WealthInput.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // label36
+            // 
+            this.label36.Location = new System.Drawing.Point(7, 16);
+            this.label36.Name = "label36";
+            this.label36.Size = new System.Drawing.Size(102, 39);
+            this.label36.TabIndex = 10;
+            this.label36.Text = "Vereinsvermögen am Saisonanfang";
+            // 
+            // TeamValuesBox
+            // 
+            this.TeamValuesBox.Controls.Add(this.label43);
+            this.TeamValuesBox.Controls.Add(this.RoadGameSupportInput);
+            this.TeamValuesBox.Controls.Add(this.label44);
+            this.TeamValuesBox.Controls.Add(this.FreeTicketsInput);
+            this.TeamValuesBox.Controls.Add(this.label39);
+            this.TeamValuesBox.Controls.Add(this.SpiritInput);
+            this.TeamValuesBox.Controls.Add(this.label40);
+            this.TeamValuesBox.Controls.Add(this.Will2WinInput);
+            this.TeamValuesBox.Controls.Add(this.label38);
+            this.TeamValuesBox.Controls.Add(this.RespectInput);
+            this.TeamValuesBox.Controls.Add(this.label37);
+            this.TeamValuesBox.Controls.Add(this.TeamCohesionInput);
+            this.TeamValuesBox.Location = new System.Drawing.Point(6, 239);
+            this.TeamValuesBox.Name = "TeamValuesBox";
+            this.TeamValuesBox.Size = new System.Drawing.Size(418, 104);
+            this.TeamValuesBox.TabIndex = 11;
+            this.TeamValuesBox.TabStop = false;
+            this.TeamValuesBox.Text = "Mannschaftswerte";
+            // 
+            // label37
+            // 
+            this.label37.AutoSize = true;
+            this.label37.Location = new System.Drawing.Point(6, 26);
+            this.label37.Name = "label37";
+            this.label37.Size = new System.Drawing.Size(101, 13);
+            this.label37.TabIndex = 11;
+            this.label37.Text = "Eingespieltheit (x10)";
+            // 
+            // TeamCohesionInput
+            // 
+            this.TeamCohesionInput.Location = new System.Drawing.Point(114, 23);
+            this.TeamCohesionInput.Name = "TeamCohesionInput";
+            this.TeamCohesionInput.Size = new System.Drawing.Size(85, 20);
+            this.TeamCohesionInput.TabIndex = 12;
+            this.TeamCohesionInput.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // label38
+            // 
+            this.label38.AutoSize = true;
+            this.label38.Location = new System.Drawing.Point(7, 52);
+            this.label38.Name = "label38";
+            this.label38.Size = new System.Drawing.Size(73, 13);
+            this.label38.TabIndex = 13;
+            this.label38.Text = "Respekt (x10)";
+            // 
+            // RespectInput
+            // 
+            this.RespectInput.Location = new System.Drawing.Point(115, 49);
+            this.RespectInput.Name = "RespectInput";
+            this.RespectInput.Size = new System.Drawing.Size(85, 20);
+            this.RespectInput.TabIndex = 14;
+            this.RespectInput.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // label39
+            // 
+            this.label39.AutoSize = true;
+            this.label39.Location = new System.Drawing.Point(219, 52);
+            this.label39.Name = "label39";
+            this.label39.Size = new System.Drawing.Size(79, 13);
+            this.label39.TabIndex = 17;
+            this.label39.Text = "Stimmung (x10)";
+            // 
+            // SpiritInput
+            // 
+            this.SpiritInput.Location = new System.Drawing.Point(327, 49);
+            this.SpiritInput.Name = "SpiritInput";
+            this.SpiritInput.Size = new System.Drawing.Size(85, 20);
+            this.SpiritInput.TabIndex = 18;
+            this.SpiritInput.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // label40
+            // 
+            this.label40.AutoSize = true;
+            this.label40.Location = new System.Drawing.Point(218, 26);
+            this.label40.Name = "label40";
+            this.label40.Size = new System.Drawing.Size(85, 13);
+            this.label40.TabIndex = 15;
+            this.label40.Text = "Siegeswille (x10)";
+            // 
+            // Will2WinInput
+            // 
+            this.Will2WinInput.Location = new System.Drawing.Point(326, 23);
+            this.Will2WinInput.Name = "Will2WinInput";
+            this.Will2WinInput.Size = new System.Drawing.Size(85, 20);
+            this.Will2WinInput.TabIndex = 16;
+            this.Will2WinInput.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // label41
+            // 
+            this.label41.AutoSize = true;
+            this.label41.Location = new System.Drawing.Point(8, 132);
+            this.label41.Name = "label41";
+            this.label41.Size = new System.Drawing.Size(86, 13);
+            this.label41.TabIndex = 11;
+            this.label41.Text = "Sponsor (Betrag)";
+            // 
+            // SponsorInput
+            // 
+            this.SponsorInput.Location = new System.Drawing.Point(115, 129);
+            this.SponsorInput.Name = "SponsorInput";
+            this.SponsorInput.Size = new System.Drawing.Size(85, 20);
+            this.SponsorInput.TabIndex = 12;
+            this.SponsorInput.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // label42
+            // 
+            this.label42.AutoSize = true;
+            this.label42.Location = new System.Drawing.Point(8, 157);
+            this.label42.Name = "label42";
+            this.label42.Size = new System.Drawing.Size(92, 13);
+            this.label42.TabIndex = 13;
+            this.label42.Text = "Sponsor (Laufzeit)";
+            // 
+            // SponsorPeriod
+            // 
+            this.SponsorPeriod.Location = new System.Drawing.Point(115, 154);
+            this.SponsorPeriod.Name = "SponsorPeriod";
+            this.SponsorPeriod.Size = new System.Drawing.Size(85, 20);
+            this.SponsorPeriod.TabIndex = 14;
+            this.SponsorPeriod.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // label43
+            // 
+            this.label43.AutoSize = true;
+            this.label43.Location = new System.Drawing.Point(219, 79);
+            this.label43.Name = "label43";
+            this.label43.Size = new System.Drawing.Size(94, 13);
+            this.label43.TabIndex = 21;
+            this.label43.Text = "Auswärtszuschuss";
+            // 
+            // RoadGameSupportInput
+            // 
+            this.RoadGameSupportInput.Location = new System.Drawing.Point(327, 76);
+            this.RoadGameSupportInput.Name = "RoadGameSupportInput";
+            this.RoadGameSupportInput.Size = new System.Drawing.Size(85, 20);
+            this.RoadGameSupportInput.TabIndex = 22;
+            this.RoadGameSupportInput.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // label44
+            // 
+            this.label44.AutoSize = true;
+            this.label44.Location = new System.Drawing.Point(7, 79);
+            this.label44.Name = "label44";
+            this.label44.Size = new System.Drawing.Size(88, 13);
+            this.label44.TabIndex = 19;
+            this.label44.Text = "Freikarten verteilt";
+            // 
+            // FreeTicketsInput
+            // 
+            this.FreeTicketsInput.Location = new System.Drawing.Point(115, 76);
+            this.FreeTicketsInput.Name = "FreeTicketsInput";
+            this.FreeTicketsInput.Size = new System.Drawing.Size(85, 20);
+            this.FreeTicketsInput.TabIndex = 20;
+            this.FreeTicketsInput.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
             // ClubView
             // 
             this.BackgroundImage = global::A2G_Trainer_XP.Properties.Resources.TabControl;
@@ -1369,6 +1569,8 @@ namespace A2G_Trainer_XP.View
             this.StadiumTab.ResumeLayout(false);
             this.StadiumBlockBox.ResumeLayout(false);
             this.StadiumBlockBox.PerformLayout();
+            this.TeamValuesBox.ResumeLayout(false);
+            this.TeamValuesBox.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -1496,5 +1698,24 @@ namespace A2G_Trainer_XP.View
         private System.Windows.Forms.TextBox ConstructionWeeksBlockB;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.ComboBox ClubSelect;
+        private System.Windows.Forms.GroupBox TeamValuesBox;
+        private System.Windows.Forms.Label label39;
+        private System.Windows.Forms.TextBox SpiritInput;
+        private System.Windows.Forms.Label label40;
+        private System.Windows.Forms.TextBox Will2WinInput;
+        private System.Windows.Forms.Label label38;
+        private System.Windows.Forms.TextBox RespectInput;
+        private System.Windows.Forms.Label label37;
+        private System.Windows.Forms.TextBox TeamCohesionInput;
+        private System.Windows.Forms.Label label36;
+        private System.Windows.Forms.TextBox WealthInput;
+        private System.Windows.Forms.Label label43;
+        private System.Windows.Forms.TextBox RoadGameSupportInput;
+        private System.Windows.Forms.Label label44;
+        private System.Windows.Forms.TextBox FreeTicketsInput;
+        private System.Windows.Forms.Label label42;
+        private System.Windows.Forms.TextBox SponsorPeriod;
+        private System.Windows.Forms.Label label41;
+        private System.Windows.Forms.TextBox SponsorInput;
     }
 }

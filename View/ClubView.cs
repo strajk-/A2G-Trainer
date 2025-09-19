@@ -82,9 +82,20 @@ namespace A2G_Trainer_XP.View
             this.BlockLStandingsInput.KeyPress += this.NumericOnly_KeyPress;
             this.BlockLSeatsInput.KeyPress += this.NumericOnly_KeyPress;
 
+            this.WealthInput.KeyPress += this.NumericOnly_KeyPress;
             this.AdsInput.KeyPress += this.NumericOnly_KeyPress;
             this.FriendlyInput.KeyPress += this.NumericOnly_KeyPress;
             this.LeagueInput.KeyPress += this.NumericOnly_KeyPress;
+            this.SponsorInput.KeyPress += this.NumericOnly_KeyPress;
+            this.SponsorPeriod.KeyPress += this.NumericOnly_KeyPress;
+
+            this.RespectInput.KeyPress += this.NumericOnly_KeyPress;
+            this.SpiritInput.KeyPress += this.NumericOnly_KeyPress;
+            this.Will2WinInput.KeyPress += this.NumericOnly_KeyPress;
+            this.TeamCohesionInput.KeyPress += this.NumericOnly_KeyPress;
+
+            this.FreeTicketsInput.KeyPress += this.NumericOnly_KeyPress;
+            this.RoadGameSupportInput.KeyPress += this.NumericOnly_KeyPress;
 
             this.ConstructionWeeksBlockA.TextChanged += this.ByteMax255_TextChanged;
             this.ConstructionWeeksBlockB.TextChanged += this.ByteMax255_TextChanged;
@@ -124,9 +135,20 @@ namespace A2G_Trainer_XP.View
             this.BlockLStandingsInput.TextChanged += this.UshortMaxNumber_TextChanged;
             this.BlockLSeatsInput.TextChanged += this.UshortMaxNumber_TextChanged;
 
+            this.WealthInput.TextChanged += this.IntMaxNumber_TextChanged;
             this.AdsInput.TextChanged += this.IntMaxNumber_TextChanged;
             this.LeagueInput.TextChanged += this.IntMaxNumber_TextChanged;
             this.FriendlyInput.TextChanged += this.IntMaxNumber_TextChanged;
+            this.SponsorInput.TextChanged += this.IntMaxNumber_TextChanged;
+            this.SponsorPeriod.TextChanged += this.ByteMax255_TextChanged;
+
+            this.RespectInput.TextChanged += this.ByteMax255_TextChanged;
+            this.SpiritInput.TextChanged += this.ByteMax255_TextChanged;
+            this.Will2WinInput.TextChanged += this.ByteMax255_TextChanged;
+            this.TeamCohesionInput.TextChanged += this.ByteMax255_TextChanged;
+
+            this.FreeTicketsInput.TextChanged += this.UshortMaxNumber_TextChanged;
+            this.RoadGameSupportInput.TextChanged += this.UshortMaxNumber_TextChanged;
 
             this.ClubNameInput.DataBindings.Add("Text", this.bindingSource, "ClubName");
             this.StadiumNameInput.DataBindings.Add("Text", this.bindingSource, "StadiumName");
@@ -136,9 +158,20 @@ namespace A2G_Trainer_XP.View
             this.FloodlightCheckbox.DataBindings.Add("Checked", this.bindingSource, "HasFloodLight");
 
 
+            this.WealthInput.DataBindings.Add("Text", this.bindingSource, "Wealth");
             this.LeagueInput.DataBindings.Add("Text", this.bindingSource, "EarningsLeagueGames");
             this.FriendlyInput.DataBindings.Add("Text", this.bindingSource, "EarningsFriendlyGames");
             this.AdsInput.DataBindings.Add("Text", this.bindingSource, "EarningsAds");
+            this.SponsorInput.DataBindings.Add("Text", this.bindingSource, "SponsorCash");
+            this.SponsorPeriod.DataBindings.Add("Text", this.bindingSource, "SponsorPeriod");
+
+            this.RespectInput.DataBindings.Add("Text", this.bindingSource, "Respect");
+            this.SpiritInput.DataBindings.Add("Text", this.bindingSource, "Spirit");
+            this.Will2WinInput.DataBindings.Add("Text", this.bindingSource, "Will2Win");
+            this.TeamCohesionInput.DataBindings.Add("Text", this.bindingSource, "TeamCohesion");
+
+            this.FreeTicketsInput.DataBindings.Add("Text", this.bindingSource, "FreeTickets");
+            this.RoadGameSupportInput.DataBindings.Add("Text", this.bindingSource, "RoadGameSupport");
 
             this.ConstructionWeeksBlockA.DataBindings.Add("Text", this.bindingSource, "BlockAWeeks");
             this.ConstructionWeeksBlockB.DataBindings.Add("Text", this.bindingSource, "BlockBWeeks");

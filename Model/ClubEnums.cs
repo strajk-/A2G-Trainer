@@ -62,13 +62,22 @@ namespace A2G_Trainer_XP.Model
             BlockJSeats,
             BlockKSeats,
             BlockLSeats,
-            OPPONENT_NAME,
+            OpponentName,
             ID,
             COUNTRY,
             TRAINEE,
             TRAINEE_A,
             TRAINEE_B,
-            TRAINEE_C
+            TRAINEE_C,
+            Respect,
+            Will2Win,
+            Spirit,
+            SponsorCash,
+            SponsorPeriod,
+            FreeTickets,
+            RoadGameSupport,
+            TeamCohesion,
+            Wealth
         }
 
         public static FieldCondition MapToCondition(byte value)

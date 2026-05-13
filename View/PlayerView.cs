@@ -2,6 +2,7 @@
 using A2G_Trainer_XP.Model;
 using Memory;
 using System;
+using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
 using System.Text;
@@ -12,16 +13,20 @@ namespace A2G_Trainer_XP.View
 {
     public partial class PlayerView : EntityView
     {
+        private Timer freezeTimer;
+
         public PlayerView(Mem memory, ProcessController controller) : base(memory, controller)
         {
             InitializeComponent();
             InitPlayerListView();
+            InitializeFreezeTimer();
         }
 
         public PlayerView(IContainer container) : base(container)
         {
             InitializeComponent();
             InitPlayerListView();
+            InitializeFreezeTimer();
         }
         private void InitPlayerListView()
         {
@@ -460,6 +465,72 @@ namespace A2G_Trainer_XP.View
                 this.playerController.SaveEntityList();
                 this.ClearAllFields(this.TeamBus);
                 this.RefreshPlayerListView(this.playerController.Type);
+            }
+        }
+
+        private void InitializeFreezeTimer ()
+        {
+            this.freezeTimer = new Timer();
+            this.freezeTimer.Interval = 1000;
+            this.freezeTimer.Tick += new EventHandler(FreezeTimer_Tick);
+            this.freezeTimer.Start();
+        }
+
+        private void FreezeTimer_Tick (object sender, EventArgs e)
+        {
+            if (!this.IsGameRunning(silent: true)) return;
+
+            try {
+                // Get all active and valid frozen values
+                Dictionary<PlayerEnums.AddressKey, byte> frozenValues = this.GetFrozenValues();
+
+                // Only proceed if there is actually something to update
+                if (frozenValues.Count > 0) {
+                    List<PlayerEnums.AddressKey> keysToUpdate = new List<PlayerEnums.AddressKey>(frozenValues.Keys);
+
+                    foreach (Player player in this.playerController.EntityList) {
+                        // Update the model state
+                        this.ApplyFrozenValuesToPlayer(player, frozenValues);
+
+                        // Execute dynamic memory write
+                        this.playerController.Save(player, keysToUpdate);
+                    }
+                }
+            }
+            catch (Exception ex) {
+                // Fail safely
+                Console.WriteLine("Freeze Timer Exception: " + ex.Message);
+            }
+        }
+
+        private void ApplyFrozenValuesToPlayer (Player player, Dictionary<PlayerEnums.AddressKey, byte> frozenValues)
+        {
+            if (frozenValues.ContainsKey(PlayerEnums.AddressKey.CONDITION))
+                player.Condition = frozenValues[PlayerEnums.AddressKey.CONDITION];
+
+            if (frozenValues.ContainsKey(PlayerEnums.AddressKey.FRESHNESS))
+                player.Freshness = frozenValues[PlayerEnums.AddressKey.FRESHNESS];
+
+            // Future properties can just be added here
+        }
+
+        private Dictionary<PlayerEnums.AddressKey, byte> GetFrozenValues ()
+        {
+            Dictionary<PlayerEnums.AddressKey, byte> values = new Dictionary<PlayerEnums.AddressKey, byte>();
+
+            this.TryParseFreezeValue(this.TeamConditionFreezeCheck, this.TeamConditionInput, PlayerEnums.AddressKey.CONDITION, values);
+            this.TryParseFreezeValue(this.TeamFreshnessFreezeCheck, this.TeamFreshnessInput, PlayerEnums.AddressKey.FRESHNESS, values);
+
+            return values;
+        }
+
+        private void TryParseFreezeValue (CheckBox checkBox, TextBox textBox, PlayerEnums.AddressKey key, Dictionary<PlayerEnums.AddressKey, byte> dictionary)
+        {
+            if (checkBox.Checked && !String.IsNullOrEmpty(textBox.Text)) {
+                byte parsedValue;
+                if (byte.TryParse(textBox.Text, out parsedValue)) {
+                    dictionary.Add(key, parsedValue);
+                }
             }
         }
 

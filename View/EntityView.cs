@@ -57,11 +57,12 @@ namespace A2G_Trainer_XP.View
                     ClearAllFields(ctrl);
             }
         }
-        protected bool IsGameRunning()
+        protected bool IsGameRunning(bool silent = false)
         {
             if (this.memory.mProc.Process == null)
             {
-                System.Windows.Forms.MessageBox.Show(this, "Anstoss-2-Gold-Prozess nicht gefunden", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                if(!silent)
+                    System.Windows.Forms.MessageBox.Show(this, "Anstoss-2-Gold-Prozess nicht gefunden", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return false;
             }
 

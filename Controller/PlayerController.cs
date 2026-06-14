@@ -246,6 +246,26 @@ namespace A2G_Trainer_XP.Controller
             #endregion
         }
 
+        public void Save (Player player, List<PlayerEnums.AddressKey> fieldsToSave)
+        {
+            foreach (var field in fieldsToSave) {
+                // Get the memory address for this specific property dynamically
+                string address = GetAddress(this.memory, player, player.Addresses[field]);
+
+                switch (field) {
+                    case PlayerEnums.AddressKey.CONDITION:
+                        this.memory.WriteBytes(address, new byte[] { player.Condition });
+                        break;
+
+                    case PlayerEnums.AddressKey.FRESHNESS:
+                        this.memory.WriteBytes(address, new byte[] { player.Freshness });
+                        break;
+
+                        // TODO: Add more player properties or improve model to include all the required information so it's not necessary to create a massive switch statement
+                }
+            }
+        }
+
         private void InitOffsets(string offset)
         {
             this.OtherOffset = offset;

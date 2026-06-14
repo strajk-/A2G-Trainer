@@ -232,6 +232,8 @@ namespace A2G_Trainer_XP.View
             this.TeamFreshnessInput = new System.Windows.Forms.TextBox();
             this.TeamConditionLabel = new System.Windows.Forms.Label();
             this.TeamConditionInput = new System.Windows.Forms.TextBox();
+            this.TeamConditionFreezeCheck = new System.Windows.Forms.CheckBox();
+            this.TeamFreshnessFreezeCheck = new System.Windows.Forms.CheckBox();
             this.TeamLevelLabel = new System.Windows.Forms.Label();
             this.TeamLevelInput = new System.Windows.Forms.TextBox();
             this.TeamDescription = new System.Windows.Forms.Label();
@@ -2453,6 +2455,8 @@ namespace A2G_Trainer_XP.View
             this.TeamBus.Controls.Add(this.TeamFreshnessInput);
             this.TeamBus.Controls.Add(this.TeamConditionLabel);
             this.TeamBus.Controls.Add(this.TeamConditionInput);
+            this.TeamBus.Controls.Add(this.TeamConditionFreezeCheck);
+            this.TeamBus.Controls.Add(this.TeamFreshnessFreezeCheck);
             this.TeamBus.Controls.Add(this.TeamLevelLabel);
             this.TeamBus.Controls.Add(this.TeamLevelInput);
             this.TeamBus.Controls.Add(this.TeamDescription);
@@ -2466,7 +2470,7 @@ namespace A2G_Trainer_XP.View
             // TeamContractDurationLabel
             // 
             this.TeamContractDurationLabel.AutoSize = true;
-            this.TeamContractDurationLabel.Location = new System.Drawing.Point(234, 76);
+            this.TeamContractDurationLabel.Location = new System.Drawing.Point(236, 76);
             this.TeamContractDurationLabel.Name = "TeamContractDurationLabel";
             this.TeamContractDurationLabel.Size = new System.Drawing.Size(79, 13);
             this.TeamContractDurationLabel.TabIndex = 70;
@@ -2474,7 +2478,7 @@ namespace A2G_Trainer_XP.View
             // 
             // TeamContractDurationInput
             // 
-            this.TeamContractDurationInput.Location = new System.Drawing.Point(319, 73);
+            this.TeamContractDurationInput.Location = new System.Drawing.Point(318, 73);
             this.TeamContractDurationInput.Name = "TeamContractDurationInput";
             this.TeamContractDurationInput.Size = new System.Drawing.Size(43, 20);
             this.TeamContractDurationInput.TabIndex = 6;
@@ -2483,7 +2487,7 @@ namespace A2G_Trainer_XP.View
             // TeamAgeLabel
             // 
             this.TeamAgeLabel.AutoSize = true;
-            this.TeamAgeLabel.Location = new System.Drawing.Point(259, 41);
+            this.TeamAgeLabel.Location = new System.Drawing.Point(236, 41);
             this.TeamAgeLabel.Name = "TeamAgeLabel";
             this.TeamAgeLabel.Size = new System.Drawing.Size(28, 13);
             this.TeamAgeLabel.TabIndex = 68;
@@ -2491,7 +2495,7 @@ namespace A2G_Trainer_XP.View
             // 
             // TeamAgeInput
             // 
-            this.TeamAgeInput.Location = new System.Drawing.Point(319, 38);
+            this.TeamAgeInput.Location = new System.Drawing.Point(318, 38);
             this.TeamAgeInput.Name = "TeamAgeInput";
             this.TeamAgeInput.Size = new System.Drawing.Size(43, 20);
             this.TeamAgeInput.TabIndex = 3;
@@ -2500,7 +2504,7 @@ namespace A2G_Trainer_XP.View
             // TeamFormLabel
             // 
             this.TeamFormLabel.AutoSize = true;
-            this.TeamFormLabel.Location = new System.Drawing.Point(126, 41);
+            this.TeamFormLabel.Location = new System.Drawing.Point(128, 41);
             this.TeamFormLabel.Name = "TeamFormLabel";
             this.TeamFormLabel.Size = new System.Drawing.Size(30, 13);
             this.TeamFormLabel.TabIndex = 65;
@@ -2508,7 +2512,7 @@ namespace A2G_Trainer_XP.View
             // 
             // TeamFormInput
             // 
-            this.TeamFormInput.Location = new System.Drawing.Point(186, 38);
+            this.TeamFormInput.Location = new System.Drawing.Point(172, 38);
             this.TeamFormInput.Name = "TeamFormInput";
             this.TeamFormInput.Size = new System.Drawing.Size(43, 20);
             this.TeamFormInput.TabIndex = 2;
@@ -2517,7 +2521,7 @@ namespace A2G_Trainer_XP.View
             // TeamFreshnessLabel
             // 
             this.TeamFreshnessLabel.AutoSize = true;
-            this.TeamFreshnessLabel.Location = new System.Drawing.Point(126, 76);
+            this.TeamFreshnessLabel.Location = new System.Drawing.Point(128, 76);
             this.TeamFreshnessLabel.Name = "TeamFreshnessLabel";
             this.TeamFreshnessLabel.Size = new System.Drawing.Size(41, 13);
             this.TeamFreshnessLabel.TabIndex = 63;
@@ -2525,7 +2529,7 @@ namespace A2G_Trainer_XP.View
             // 
             // TeamFreshnessInput
             // 
-            this.TeamFreshnessInput.Location = new System.Drawing.Point(186, 73);
+            this.TeamFreshnessInput.Location = new System.Drawing.Point(172, 73);
             this.TeamFreshnessInput.Name = "TeamFreshnessInput";
             this.TeamFreshnessInput.Size = new System.Drawing.Size(43, 20);
             this.TeamFreshnessInput.TabIndex = 5;
@@ -2547,6 +2551,24 @@ namespace A2G_Trainer_XP.View
             this.TeamConditionInput.Size = new System.Drawing.Size(43, 20);
             this.TeamConditionInput.TabIndex = 4;
             this.TeamConditionInput.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // TeamConditionFreezeCheck
+            // 
+            this.TeamConditionFreezeCheck.AutoSize = true;
+            this.TeamConditionFreezeCheck.Location = new System.Drawing.Point(111, 75);
+            this.TeamConditionFreezeCheck.Name = "TeamConditionFreezeCheck";
+            this.TeamConditionFreezeCheck.Size = new System.Drawing.Size(15, 14);
+            this.TeamConditionFreezeCheck.TabIndex = 64;
+            this.TeamConditionFreezeCheck.UseVisualStyleBackColor = true;
+            // 
+            // TeamFreshnessFreezeCheck
+            // 
+            this.TeamFreshnessFreezeCheck.AutoSize = true;
+            this.TeamFreshnessFreezeCheck.Location = new System.Drawing.Point(217, 75);
+            this.TeamFreshnessFreezeCheck.Name = "TeamFreshnessFreezeCheck";
+            this.TeamFreshnessFreezeCheck.Size = new System.Drawing.Size(15, 14);
+            this.TeamFreshnessFreezeCheck.TabIndex = 65;
+            this.TeamFreshnessFreezeCheck.UseVisualStyleBackColor = true;
             // 
             // TeamLevelLabel
             // 
@@ -2879,6 +2901,8 @@ namespace A2G_Trainer_XP.View
         private System.Windows.Forms.TextBox TeamFreshnessInput;
         private System.Windows.Forms.Label TeamConditionLabel;
         private System.Windows.Forms.TextBox TeamConditionInput;
+        private System.Windows.Forms.CheckBox TeamConditionFreezeCheck;
+        private System.Windows.Forms.CheckBox TeamFreshnessFreezeCheck;
         private System.Windows.Forms.Label TeamLevelLabel;
         private System.Windows.Forms.TextBox TeamLevelInput;
         private System.Windows.Forms.Label TeamDescription;
